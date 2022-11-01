@@ -1,0 +1,11 @@
+{
+  "Zone": "us",
+  "OrgId": "167669",
+  "WorkspaceId": "3adb76c9-2e9b-42e3-bfb5-0bb1ff67ba89",
+  "SourceId": "b23ae454-9e3c-4205-8a8a-14f58f8ae0eb",
+  "Runtime": "go:go-ampli",
+  "Branch": "main",
+  "Version": "1.0.0",
+  "VersionId": "83d48016-f614-4a44-8fcc-f0fd67bdf88a",
+  "Path": "./ampli"
+}
