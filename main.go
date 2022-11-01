@@ -5,10 +5,15 @@ import (
 	"html/template"
 )
 
-var tpl = template.Must(template.ParseFiles("index.html"))
+var homePageTemplate = template.Must(template.ParseFiles("index.html"))
+var storePageTemplate = template.Must(template.ParseFiles("store.html"))
 
-func indexHandler(w http.ResponseWriter, r *http.Request) {
-	tpl.Execute(w, nil)
+func homePageHandler(w http.ResponseWriter, r *http.Request) {
+	homePageTemplate.Execute(w, nil)
+}
+
+func storePageHandler(w http.ResponseWriter, r *http.Request) {
+	storePageTemplate.Execute(w, nil)
 }
 
 func main() {
@@ -16,6 +21,7 @@ func main() {
 
 	mux := http.NewServeMux()
 
-	mux.HandleFunc("/", indexHandler)
+	mux.HandleFunc("/", homePageHandler)
+	mux.HandleFunc("/store", storePageHandler)
 	http.ListenAndServe(":"+port, mux)
 }
