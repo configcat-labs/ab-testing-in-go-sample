@@ -9,6 +9,7 @@ import (
 var homePageTemplate = template.Must(template.ParseFiles("index.html"))
 var storePageTemplate = template.Must(template.ParseFiles("store.html"))
 
+
 func homePageHandler(w http.ResponseWriter, r *http.Request) {
 	homePageTemplate.Execute(w, nil)
 }
@@ -28,8 +29,10 @@ func main() {
 
 	port := "3000"
 
-	mux := http.NewServeMux()
+	fs := http.FileServer(http.Dir("assets"))
 
+	mux := http.NewServeMux()
+	mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 	mux.HandleFunc("/", homePageHandler)
 	mux.HandleFunc("/store", storePageHandler)
 	http.ListenAndServe(":"+port, mux)
