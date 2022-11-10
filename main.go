@@ -1,16 +1,31 @@
 package main
 
 import (
-	"net/http"
 	"html/template"
+	"net/http"
+
 	"github.com/configcat-labs/ab-testing-in-go-sample/ampli"
+	"github.com/configcat/go-sdk/v7"
 )
 
+var client = configcat.NewClient("ScDaCD8ETUuG7wYo3BdP2A/5s96HBVckk-RzI-iVf-zRA")
+
+var user = &configcat.UserData{Email: "email1@example.com"}
+
 var homePageTemplate = template.Must(template.ParseFiles("index.html"))
+var newHomePageTemplate = template.Must(template.ParseFiles("newIndex.html"))
 var storePageTemplate = template.Must(template.ParseFiles("store.html"))
 
 func homePageHandler(w http.ResponseWriter, r *http.Request) {
-	homePageTemplate.Execute(w, nil)
+	isNewHomePageEnabled := client.GetBoolValue("newhomepage", false, user)
+
+	if isNewHomePageEnabled {
+
+		newHomePageTemplate.Execute(w, nil)
+		} else {
+		homePageTemplate.Execute(w, nil)
+	}
+
 }
 
 func storePageHandler(w http.ResponseWriter, r *http.Request) {
