@@ -16,6 +16,7 @@ var homePageTemplate = template.Must(template.ParseFiles("index.html"))
 var newHomePageTemplate = template.Must(template.ParseFiles("newIndex.html"))
 var storePageTemplate = template.Must(template.ParseFiles("store.html"))
 
+
 func homePageHandler(w http.ResponseWriter, r *http.Request) {
 	isNewHomePageEnabled := client.GetBoolValue("newhomepage", false, user)
 
@@ -43,8 +44,10 @@ func main() {
 
 	port := "3000"
 
-	mux := http.NewServeMux()
+	fs := http.FileServer(http.Dir("assets"))
 
+	mux := http.NewServeMux()
+	mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
 	mux.HandleFunc("/", homePageHandler)
 	mux.HandleFunc("/store", storePageHandler)
 	http.ListenAndServe(":"+port, mux)
