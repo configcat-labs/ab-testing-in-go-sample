@@ -3,7 +3,7 @@ module github.com/configcat-labs/ab-testing-in-go-sample
 go 1.19
 
 require (
-	github.com/amplitude/analytics-go v0.0.11 // indirect
+	github.com/amplitude/analytics-go v0.0.12 // indirect
 	github.com/blang/semver v3.5.1+incompatible // indirect
 	github.com/configcat/go-sdk/v7 v7.6.0 // indirect
 	github.com/google/uuid v1.3.0 // indirect

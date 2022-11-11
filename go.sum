@@ -1,5 +1,7 @@
 github.com/amplitude/analytics-go v0.0.11 h1:AiNzIGfT9qFLsor4TM5prOG8xUwORDgHx5VRJwBh54I=
 github.com/amplitude/analytics-go v0.0.11/go.mod h1:usOqpc3xyDqxJyjGKWVIDbuVvk2H93KX1Skir/TM0nA=
+github.com/amplitude/analytics-go v0.0.12 h1:TXfCI+SzgfKNFHqpvQpDpAfOyN68NBcK1lGqdFfeRg0=
+github.com/amplitude/analytics-go v0.0.12/go.mod h1:usOqpc3xyDqxJyjGKWVIDbuVvk2H93KX1Skir/TM0nA=
 github.com/blang/semver v3.5.1+incompatible h1:cQNTCjp13qL8KC3Nbxr/y2Bqb63oX6wdnnjpJbkM4JQ=
 github.com/blang/semver v3.5.1+incompatible/go.mod h1:kRBLl5iJ+tD4TcOOxsy/0fnwebNt5EWlYSAyrTnjyyk=
 github.com/configcat/go-sdk/v7 v7.6.0 h1:CthQJ7DMz4bvUrpc8aek6VouJjisCvZCfuTG2gyNzL4=

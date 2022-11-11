@@ -24,6 +24,7 @@ func homePageHandler(w http.ResponseWriter, r *http.Request) {
 
 		newHomePageTemplate.Execute(w, nil)
 		} else {
+		// Show the old home page
 		homePageTemplate.Execute(w, nil)
 	}
 
