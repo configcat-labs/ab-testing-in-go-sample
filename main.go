@@ -10,23 +10,19 @@ import (
 
 var client = configcat.NewClient("ScDaCD8ETUuG7wYo3BdP2A/5s96HBVckk-RzI-iVf-zRA")
 
-var user = &configcat.UserData{Email: "email1@example.com"}
+var user = &configcat.UserData{Email: "email1@examaple.com"}
 
-var homePageTemplate = template.Must(template.ParseFiles("index.html"))
+var oldHomePageTemplate = template.Must(template.ParseFiles("index.html"))
 var newHomePageTemplate = template.Must(template.ParseFiles("newIndex.html"))
 var storePageTemplate = template.Must(template.ParseFiles("store.html"))
 
 
 func homePageHandler(w http.ResponseWriter, r *http.Request) {
 	isNewHomePageEnabled := client.GetBoolValue("newhomepage", false, user)
+	isOldHomePageEnabled := client.GetBoolValue("oldhomepage", false, user)
 
-	if isNewHomePageEnabled {
-
-		newHomePageTemplate.Execute(w, nil)
-		} else {
-		// Show the old home page
-		homePageTemplate.Execute(w, nil)
-	}
+	if isNewHomePageEnabled { newHomePageTemplate.Execute(w, nil)} 
+	if isOldHomePageEnabled { oldHomePageTemplate.Execute(w, nil)} 
 
 }
 
@@ -43,7 +39,7 @@ func main() {
 		},
 })
 
-	port := "3000"
+	port := "4000"
 
 	fs := http.FileServer(http.Dir("assets"))
 

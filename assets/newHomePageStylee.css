@@ -13,6 +13,7 @@ body {
   font-size: 0.9rem;
   font-family: "League Spartan", sans-serif;
   font-weight: 400;
+  background-color: #F5DF4D;
 }
 
 h1,
@@ -37,12 +38,12 @@ h4, p {
 }
 
 .section-description {
-  color: hsl(303, 10%, 53%);
+  color: #282D3C;
   margin-bottom: 24px;
 }
 
 .section-link {
-  background-color: #C60C29;
+  background-color: #363945;
   padding: .8em 1.2em;
   border-radius: 24px;
   color: whitesmoke;
