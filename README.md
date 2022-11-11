@@ -1,20 +1,39 @@
 Read.me template:
 
-# A/B testing in Go sample (WIP: 🚧)
+# A/B testing in Go sample
 
 [Read the blog post here](https://configcat.com/blog/)
 
-A few words about the contents of the repository. Whats is this application about, what does it demonstrate? Add a backlink to https://configcat.com
+This is demo website built with the Go programming language. In the article, it was used in a demo A/B test experiment where each variation of the home page was released to a user segment to gather metrics. In the end, we compared the metrics to determine which version was better.
+
+![A/B Versions]('./ab_versions.png')
 
 ## Build & Run
 
-Instructions on how to build and run the application locally. A student or junior developer should be able to run the application.
-- Prerequisites
-- Steps, commands to run
+### Prerequisites
+
+- [Go](https://go.dev/) version 1.19
+
+
+### Running the app
+1. Clone this repo
+
+2. Run the following command with 'make'
+
+```sh
+make run
+```
+
+or Manually run the follow commands:
+
+```sh
+go build
+
+./ab-testing-in-go-sample
+```
 
 ## Learn more
 
-Example:
 - [Go Documentation](https://go.dev/doc/) - learn about Go features and its API.
 - [Learn Go](https://go.dev/doc/tutorial/getting-started) - Getting started with Hello, World.
 
