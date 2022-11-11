@@ -4,9 +4,9 @@ Read.me template:
 
 [Read the blog post here](https://configcat.com/blog/)
 
-This is demo website built with the Go programming language. In the article, it was used in a demo A/B test experiment where each variation of the home page was released to a user segment to gather metrics. In the end, we compared the metrics to determine which version was better.
+This is a demo website built with the Go programming language. In the article, it was used in a demo A/B test experiment where each variation of the home page was released to a user segment to gather metrics. In the end, we compared metrics to determine which variation performed best.
 
-![A/B Versions]('./ab_versions.png')
+![A/B Versions](ab_versions.png)
 
 ## Build & Run
 
