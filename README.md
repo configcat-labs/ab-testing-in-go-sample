@@ -1,5 +1,3 @@
-Read.me template:
-
 # A/B testing in Go sample
 
 [Read the blog post here](https://configcat.com/blog/)
